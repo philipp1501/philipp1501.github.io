@@ -1,54 +1,580 @@
-<div class="quiz-container">
-    <h1>Multiple Choice Quiz</h1>
-    <hr />
-    <form id="quiz-form">
-        <div class="d-flex">
-            <div class="question">
-                <p>1. What is the capital of France?</p>
-                <div class="answers">
-                    <label>
-                        <input type="radio" name="q1" value="a" />
-                        Paris
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="b" />
-                        Madrid
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="c" />
-                        London
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="d" />
-                        Rome
-                    </label>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multiple Choice Quiz</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 18px;
+                background-color: aliceblue;
+            }
+            form {
+                margin-top: 20px;
+            }
+            .quiz-container {
+                width: 80%;
+                margin: 0 auto;
+            }
 
-            <div class="question">
-                <p>2. What is the largest planet in our solar system?</p>
-                <div class="answers">
-                    <label>
-                        <input type="radio" name="q2" value="a" />
-                        Venus
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="b" />
-                        Mars
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="c" />
-                        Jupiter
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="d" />
-                        Saturn
-                    </label>
+            h1 {
+                text-align: center;
+            }
+
+            .question {
+                width: 45%;
+                margin-bottom: 20px;
+                background-color: #fff;
+                padding: 20px;
+            }
+            .question:nth-child(odd) {
+                margin-right: 5%;
+            }
+            .question p {
+                font-weight: bold;
+            }
+
+            .answers {
+                margin-bottom: 20px;
+            }
+            .answers label:not(:first-child) {
+                border-top: 1px solid #e0e0e0;
+            }
+
+            label {
+                padding: 10px 0;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            input[type="radio"] {
+                margin-right: 10px;
+            }
+
+            .submit-btn {
+                display: block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .result {
+                font-weight: bold;
+                font-size: 28px;
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #f2f2f2;
+                border-radius: 5px;
+                text-align: center;
+            }
+            .d-flex {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1>Multiple Choice Quiz</h1>
+            <hr />
+            <form id="quiz-form">
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            1. Which of the following is not a valid way to
+                            declare a variable in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q1" value="a" />
+                                dim
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="b" />
+                                let
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="c" />
+                                const
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="d" />
+                                var
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>2. What does the === operator do in JavaScript?</p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                Compares values for equality, allowing type
+                                conversion
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                Compares values for equality, without type
+                                conversion
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                Checks if two values are of the same type and
+                                value
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                Assigns a value to a variable
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>3. What does DOM stand for?</p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                Data Object Model
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                Document Object Model
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                Document Oriented Model
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                Document Operator Model
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>
+                            4. Which function is used to print a message to the
+                            console in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                log()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                print()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                display()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                console.log()
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            5. What is the purpose of the querySelector() method
+                            in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                To select elements by their class name
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                To select elements by their ID
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                To select elements using CSS selectors
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                To select elements by their tag name
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>6. What does JSON stand for?</p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                JavaScript Object Notation
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                JavaScript Object Navigator
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                JavaScript Operator Notation
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                JavaScript Object Naming
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            7. Which method is used to add a new element to an
+                            array in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                addElement()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                append()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                push()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                insert()
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>
+                            8. Which event is triggered when a user clicks on an
+                            HTML element?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                onhover
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                onmouseover
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                onclick
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                onpress
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            9. What is the purpose of the typeof operator in
+                            JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                To determine the data type of a variable
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                To check if a variable is defined
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                To convert a string to a number
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                To concatenate two strings
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>
+                            10. What is the correct way to create a function in
+                            JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                function: myFunction()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                create function myFunction()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                function myFunction()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                myFunction(): function
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            11. What does the forEach() method do in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                Adds an event listener to an element
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                Loops through the elements of an array
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                Checks if a condition is true
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                Converts a string to lowercase
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>
+                            12. Which statement is used to exit or terminate a
+                            loop in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                end
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                continue
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                break
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                exit
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            13. What is the purpose of the parseInt() function
+                            in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                Parses a string and returns an integer
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                Parses a string and returns a floating-point
+                                number
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                Converts a number to a string
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                Checks if a variable is an integer
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>
+                            14. What does the NaN keyword represent in
+                            JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                Not a Node
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                Null and Notable
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                Not a Number
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                None and None
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>
+                            15. Which method is used to remove the last element
+                            from an array in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                remove()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                deleteLast()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                pop()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                removeLast()
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>
+                            16. What does the typeof null return in JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                "null"
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                "object"
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                "undefined"
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                "string"
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="question">
+                        <p>17. How do you declare a JavaScript object?</p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                var myObj = {}
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                object myObj = {}
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                myObj = new Object()
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                var myObj = new Object()
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>
+                            18. What is the purpose of the splice() method in
+                            JavaScript?
+                        </p>
+                        <div class="answers">
+                            <label>
+                                <input type="radio" name="q2" value="a" />
+                                To add elements to an array
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="b" />
+                                To remove elements from an array
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="c" />
+                                To reverse the elements of an array
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="d" />
+                                To sort the elements of an array
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+
+            <div class="result" id="result"></div>
         </div>
-        <button type="submit" class="submit-btn">Submit</button>
-    </form>
 
-    <div class="result" id="result"></div>
-</div>
+        <script>
+            const quizForm = document.getElementById("quiz-form");
+            const resultDiv = document.getElementById("result");
+            const correctAnswers = [
+                "a",
+                "c",
+                "a",
+                "d",
+                "c",
+                "a",
+                "c",
+                "c",
+                "a",
+                "c",
+                "b",
+                "c",
+                "a",
+                "c",
+                "c",
+                "b",
+                "a",
+                "b",
+            ];
+
+            quizForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                let score = 0;
+                const userAnswers = [quizForm.q1.value, quizForm.q2.value];
+                userAnswers.forEach((answer, index) => {
+                    if (answer === correctAnswers[index]) {
+                        score += 1;
+                    }
+                });
+
+                resultDiv.innerHTML = `Your score is ${score}/${correctAnswers.length}`;
+            });
+        </script>
+    </body>
+</html>
